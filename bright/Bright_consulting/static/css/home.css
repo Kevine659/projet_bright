@@ -1,0 +1,257 @@
+ section .image {
+   width: 78.5em;
+   height: 22em;
+}
+
+.text {
+     margin-left: auto;
+    margin-right: auto
+}
+
+.text h1 {
+    position: absolute; 
+    font-size: 2.5em;
+    top: 5.5em;
+    left: 18em;  
+    font-family: 'Manrope', sans-serif;
+    color: #ffff;
+}
+
+.text h3 {
+    position: absolute; 
+    font-size: 1em;
+    top: 19.5em;
+    color: #ffff;
+    font-family: 'Manrope', sans-serif;
+    left: 49em;
+    line-height: 1.9;
+
+}
+
+.text .button {
+    text-decoration: none;
+    padding: 8px;
+    margin: 12px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #B41DA0;
+    color: #FFFF;
+    position: relative;
+    left: 61em;
+    top: -7em;
+    font-size: 0.9em;
+}
+
+
+.entete {
+    text-align: center;
+    font-size: 2em;
+    color: #0C0570;
+    font-family: 'Manrope', sans-serif;
+    position: absolute;
+    top: 16.5em;
+    left: 10.5em;
+}
+
+/* --- Styles pour chaque élément du carrousel --- */
+.flag-item {
+    width: 150px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 5px 0; 
+    flex-shrink: 0; 
+}
+
+.flag-item img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 10px; 
+    margin-bottom: 0; 
+}
+
+.flag-item p {
+    margin: 0; 
+    font-size: 0.9em; 
+    white-space: nowrap; 
+}
+
+.carousel-container {
+    overflow: hidden; 
+    width: 100%; 
+    margin: 20px auto; 
+    margin-top: 1em;
+}
+
+.carousel-track {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    white-space: nowrap; 
+    animation: infinite-scroll 20s linear infinite; 
+    width: calc(12 * 150px); 
+    min-width: 100%; 
+}
+
+@keyframes infinite-scroll {
+    from {
+        transform: translateX(0); 
+    }
+    to {
+        /* Décalage ajusté pour les 10 éléments uniques à la nouvelle largeur */
+        transform: translateX(calc(-10 * 150px)); 
+    }
+}
+
+.visa {
+    background-color: #E4E2FF;
+    margin: 2em;
+    padding: 2em;
+    
+}
+
+.visa ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none; 
+
+}
+
+.visa ul li {
+    line-height: 3;
+    font-family: 'Manrope';
+    color: #0C0570;
+}
+
+.visa ul i {
+    font-size: 35px;
+    margin-top: -2em;
+    margin-left: 1em;
+    color: #B41DA0;
+}
+
+
+.visa  :hover {
+    cursor: pointer;
+}
+
+.entete2 {
+    text-align: center;
+    font-size: 2em;
+    color: #0C0570;
+    font-family: 'Manrope', sans-serif;   
+}
+
+.pays .pays-block {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.pays img {
+    height: 8em;
+    width: 15em;
+    
+}
+
+.pays ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none; 
+    font-family: 'Manrope', sans-serif;   
+
+}
+
+.pays .destinations {
+    text-align: center;
+    font-size: 2em;
+    color: #0C0570;
+    font-family: 'Manrope', sans-serif; 
+}
+
+.special-offers {
+    padding: 20px;
+}
+
+.offer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.offer {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    max-width: 300px; 
+}
+
+.flag-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.offer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.country-name {
+    color: var(--primary-color);
+    font-size: 2.5em; 
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.offer-details p {
+    font-size: 1.2em; 
+    line-height: 1.4;
+    max-width: 250px;
+}
+
+
+.center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.person-img {
+    max-height: 400px; 
+    width: auto;
+    object-fit: contain;
+}
+
+
+.message {
+    margin-top: 80px;
+    padding: 0 20px;
+}
+
+.message p {
+    font-size: 1.1em;
+    color: var(--catchphrase-color);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+.dubai-offer p {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 50px;
+}

@@ -1,0 +1,54 @@
+{% load static %}  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Consulting</title>  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+
+</head>
+<body>
+    <nav>
+        <div class="header1"> 
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> brightconsulting@gmail.com</li>
+                
+                <li><i class="fa-solid fa-clock"></i> 
+                <span class="horaire-semaine">Lundi-Vendredi: 8h30-17h30</span>
+                <span class="horaire-samedi">Samedi : 8h-13h30</span>
+                </li>
+                
+                <li><i class="fa-solid fa-location-dot"></i>
+                <span class="horaire-semaine">Douala Bonamoussadi</span>
+                <span class="horaire-samedi">En face Santa Lucia</span>
+                </li>    
+                
+                <li><i class="fa-solid fa-phone"></i> +237 677 88 99 00</li>
+            </ul>
+        </div>
+        <div class="header2">
+            <ul>
+               <img class="img" src="{% static 'images/logo.jpeg' %}" alt="Description de mon logo">
+
+                <li>Acceuil</li>
+                
+                <li>Nos programmes</li>
+                
+                <li>Services</li>    
+                
+                <li>Blog</li>
+                <button type="button" class="button">Prendre RDV</button>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>
+</html>

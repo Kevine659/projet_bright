@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <img class="image" src= "{% static 'images/font.png' %}" alt="font">
+    <div class="text">
+        <h1>Votre futur commence ici</h1>
+        <h3>simplifier votre projet d'immigration avec notre <br>accompagnement personnalise et bienveillant</h3>
+        <button type="button" class="button">Decouvrir nos services</button>
+
+    </div>
+    <h3 class="entete"> des solutions d'immigration completes</h3>
+
+    <div class="carousel-container">
+        <div class="carousel-track">
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau France">
+            <p>France</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Canada">
+            <p>Canada</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau USA">
+            <p>USA</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Allemagne">
+            <p>Allemagne</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Japon">
+            <p>Japon</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Brésil">
+            <p>Brésil</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Australie">
+            <p>Australie</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Italie">
+            <p>Italie</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Chine">
+            <p>Chine</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Mexique">
+            <p>Mexique</p>
+        </div>
+
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau France">
+            <p>France</p>
+        </div>
+        <div class="flag-item">
+            <img src="{% static 'images/france.webp' %}" alt="Drapeau Canada">
+            <p>Canada</p>
+        </div>
+    </div>
+</div> 
+<div class="visa">
+    <ul>
+        <li class="visa-card"><i class="fa-solid fa-briefcase"></i><br>Visa Travail</li>
+        <li><i class="fa-solid fa-graduation-cap"></i><br>Visa etudiant</li>
+        <li ><i class="fa-solid fa-globe"></i><br>Visa Tourisme</li>
+        <li><i class="fa-solid fa-people-roof"></i><br>Regroupement familial</li>
+        <li><i class="fa-solid fa-house-user"></i><br>Residance permanante</li>
+    </ul>
+</div> 
+
+<h3 class="entete2"> Nos differentes destinations</h3>
+
+<div class="pays">
+    <ul>
+        <li><img src="{% static 'images/france.webp' %}" alt=""><br>
+            <p class="destinations">France</p><br>
+            <p>visa étudiant(3 mois pour la procédure)</p><br>
+            <p>visa travail(5mois pour la procédure)</p><br>
+            <p>regroupement familail(4mois pour la procédure)</p><br>
+            <p>residence permanante(3mois pour la procédure)</p>
+        </li>
+
+        <li><img src="{% static 'images/ongris.webp' %}" alt=""><br>
+            <p class="destinations">Hongrie</p><br>
+            <p>visa étudiant(3 mois pour la procédure)</p><br>
+            <p>visa travail(5mois pour la procédure)</p><br>
+            <p>regroupement familail(4mois pour la procédure)</p><br>
+            <p>residence permanante(3mois pour la procédure)</p>
+        </li>
+        
+        <li><img src="{% static 'images/slovaquie.webp' %}" alt=""><br>
+            <p class="destinations">Slovaquie</p><br>
+            <p>visa étudiant(3 mois pour la procédure)</p><br>
+            <p>visa travail(5mois pour la procédure)</p><br>
+            <p>regroupement familail(4mois pour la procédure)</p><br>
+            <p>residence permanante(3mois pour la procédure)</p>
+        </li>
+    </ul>
+</div>
+
+<main class="special-offers">
+    <div class="offer-container">
+        <div class="offer">
+            <img src="{% static 'images/usa.webp' %}" alt="Drapeau des États-Unis" class="flag-image">
+            <div class="offer-details">
+                <span class="country-name">USA</span>
+                <p>20% de réduction sur les frais de procédures</p>
+            </div>
+        </div>
+
+        <div class="center-image">
+            <img src="{% static 'images/offres.webp' %}" alt="Personne surprise" class="person-img">
+        </div>
+
+        <div class="offer">
+            <img src="{% static 'images/espagne.webp' %}" alt="Drapeau de l'Espagne" class="flag-image">
+            <div class="offer-details">
+                <span class="country-name">Espagne</span>
+                <p>20% de réduction sur les frais de procédures</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="message">
+        <p>ca te dirais de faire un tour à l'etranger? un sejour pour te divertir un peu? meme avec un petit montant nous t'offrons cette opportunite</p>
+    </div>
+        
+    <div class="dubai-offer">
+        <p>Visa tourisme à Dubai</p>
+    </div>
+
+    <div class="windows-activation">
+        </div>
+
+</main>
+
+
+
+
+
+
+{% endblock %}
