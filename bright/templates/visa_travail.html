@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/visa_travail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<script src="{% static 'js/travail.js' %}"></script>
+
+<section>
+
+
+    <div class="image-header-slideshow">
+        <div class="slide-item one"></div>
+        <div class="slide-item two"></div>
+        <div class="slide-item three"></div>
+    </div>
+    <div class="text">
+        <h1>Souhaitez-vous travailler à l'étranger?? Nous sommes là pour <br><span class="text2"> vous accompagner dans
+                votre procédure</span></h1>
+    </div>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">{{ titre_page }}</h1>
+
+        <div class="intro-message-box">
+            <p>
+                Veuillez dérouler les cartes Pays ci-dessous pour voir les différentes offres de poste disponibles pour
+                le Visa Travail.
+            </p>
+        </div>
+
+        <div class="filter-controls mb-4">
+            <input type="text" id="global-search" placeholder="Rechercher un pays ou un poste..." class="search-input">
+        </div>
+
+        <p id="no-results-message" class="alert-message text-center" style="display: none;">Désolé, ce pays ou ce poste
+            n'existe pas.</p>
+
+        {% if offres_regroupees %}
+        <div id="accordion-visa-travail">
+            {% for pays, offres_liste in offres_regroupees %}
+            <div class="country-card" data-country-name="{{ pays.nom_pays }}">
+
+                <div class="country-header" data-country-id="{{ pays.id }}">
+                    {% if pays.drapeau %}
+                    <img src="{{ pays.drapeau.url }}" alt="Drapeau de {{ pays.nom_pays }}" class="country-flag">
+                    {% endif %}
+                    <h2>{{ pays.nom_pays }} ({{ offres_liste|length }} Offre{{ offres_liste|length|pluralize }})</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+
+                <div class="offers-content" id="content-{{ pays.id }}">
+
+                    <div class="offers-grid">
+                        {% for offre in offres_liste %}
+                        <div class="job-offer-card" data-job-title="{{ offre.poste_disponible|lower }}">
+                            <h3>{{ offre.poste_disponible }}</h3>
+
+
+                            <div class="job-details">
+                                <p>
+                                    <i class="fas fa-money-bill-wave"></i> Salaire Mensuel: {{ offre.salaire_mensuel_min }} - {{ offre.salaire_mensuel_max }} euro
+                                </p>
+                                <div class="requirements-box">
+                                    <h4>Exigences du Poste:</h4>
+                                    <p>{{ offre.exigences_specifiques|linebreaksbr }}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-center alert-info">Aucune offre d'emploi de type "Visa Travail" n'est disponible pour le moment.
+        </p>
+        {% endif %}
+    </div>
+
+    <!-- documentation -->
+    <h2 class="titre">Documents nécessaires pour débuter votre procédure</h2>
+    <div class="document-container">
+
+        <ul>
+            <li>Scan passeport</li>
+            <li>Demi photo numérique 4x4</li>
+            <li>CV</li>
+            <li>Certificat médical</li>
+            <li>Dernières attestation de travail </li>
+            <li>Extrait de casier judiciaire</li>
+
+        </ul>
+    </div>
+
+    <!-- victoires -->
+<!-- 
+    <p class="vict">Ils sont nombreux à avoir réuissit leurs procédures sans aucunes intérruption faites nous confiance
+        et lancez <br>
+        <span class="vict2">votre procédure vous ne serez pas décu</span>
+    </p>
+
+    <h1>{{ titre_page2 }}</h1>
+
+    {% if victoires %}
+    <div class="liste-victoires">
+        {% for victoire in victoires %}
+        <div class="carte-victoire">
+            <img src="{{ victoire.photo.url }}" alt="Photo de {{ victoire.nom_voyageur }}">
+            <h2>{{ victoire.nom_voyageur }}</h2>
+            <p>
+                <strong>Métier :</strong> {{ victoire.metier }}<br>
+                <strong>Destination :</strong> {{ victoire.pays_destination }}
+            </p>
+            {% if victoire.type_visa %}
+            <p class="visa-type">
+                Visa obtenu : {{ victoire.type_visa.nom_visa }}
+            </p>
+            {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Aucune victoire enregistrée pour le Visa de Travail pour le moment.</p>
+    {% endif %} -->
+
+    <!-- contacts -->
+    <p class="vict">qu’attendez-vous pour lancer votre procédure?? nous sommes disponible 24h/24. N’hésitez pas à
+        <br>nous contacter ou nous appeler
+    </p>
+
+    <div class="contact-buttons-container">
+        <a href="https://wa.me/237676547219" class="contact-button whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="tel:+237655667744" class="contact-button call-button">
+            <i class="fas fa-phone"></i> +237 676 54 72 19
+        </a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<h1>{{titre_page3}}</h1>
+
+<div class="faq-container">
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Quels sont les critères pour obtenir un visa de travail ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+                Les critères varient selon le pays, mais ils incluent généralement : une offre d’emploi valide, des
+                compétences adaptées au poste, un passeport en cours de validité et parfois une preuve d’expérience
+                professionnelle. Nous vous aidons à vérifier votre éligibilité selon la destination choisie.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Ai-je besoin d’une promesse d’embauche avant de demander un visa travail ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+                Dans la majorité des pays, oui. Il est obligatoire d’avoir une offre d’emploi officielle pour lancer la
+                procédure. Certaines destinations proposent aussi des programmes ouverts permettant une recherche
+                d’emploi sur place. Nous vous guidons selon votre profil.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Combien de temps prend l’obtention d’un visa travail ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+                Les délais varient de 4 à 16 semaines selon le pays et la nature du contrat de travail. Bright
+                Consulting effectue un suivi constant afin de vous informer dès qu’une mise à jour est disponible.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Le visa travail peut-il mener à la résidence permanente ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+
+                Dans certains pays comme le Canada, l’Allemagne ou l’Australie, un visa travail peut servir de
+                passerelle vers la résidence permanente. Nous vous conseillons sur les options possibles en fonction de
+                vos ambitions professionnelles.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<section class="avis-section">
+    <h2>Laissez-nous votre Témoignage</h2>
+
+    <form method="post" action="{% url 'soumettre_avis' %}">
+        {% csrf_token %}
+
+        {% include 'avis/formulaire_avis.html' with form=form_avis %}
+
+        <button type="submit" class="btn btn-primary">Soumettre mon Avis</button>
+    </form>
+
+</section>
+
+
+
+
+
+
+{% endblock %}

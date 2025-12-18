@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/visa_etudiant.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<script src="{% static 'js/etudiant.js' %}"></script>
+
+
+<div class="image-header-slideshow">
+    <div class="slide-item one"></div>
+    <div class="slide-item two"></div>
+    <div class="slide-item three"></div>
+</div>
+<div class="text">
+    <h1>Souhaitez-vous poursuivre vos etudes à l'étranger?? <br><span class="text2"> pas de panique</span></h1>
+</div>
+
+<section class="consultation-section">
+    <p class="text-section">
+        chez <span class="text3">BRIGHT Consulting</span> vous bénéficiez de la meilleure orientation et un bon suivi du
+        début de votre procédure jusqu'à l'obtention de votre visa.
+    </p>
+
+    <div class="container my-5">
+
+        <div class="filter-controls mb-4">
+            <input type="text" id="global-search-etudiant"
+                placeholder="Rechercher un pays..." class="search-input">
+        </div>
+
+        <p id="no-results-message-etudiant" class="alert-message text-center" style="display: none;">Désolé, ce pays,
+            cette filière ou ce domaine n'existe pas.</p>
+
+        <h2 class="section-title">🌍 Destinations Étudiantes</h2>
+
+        <div id="country-grid" class="country-grid-4-cols">
+            {% if opportunites_pays %}
+            {% for opportunite in opportunites_pays %}
+            <div class="country-card-animated country-item" data-index="{{ forloop.counter }}"
+                data-search-term="{{ opportunite.pays.nom_pays|lower }} {{ opportunite.type_visa.nom_visa|lower }}">
+                <div class="card-inner-content">
+
+                    <div class="flag-container">
+                        {% if opportunite.pays.drapeau %}
+                        <img src="{{ opportunite.pays.drapeau.url }}" alt="Drapeau de {{ opportunite.pays.nom_pays }}"
+                            class="country-flag-lg">
+                        {% endif %}
+                    </div>
+
+                    <div class="country-info">
+                        <h3 class="country-name">{{ opportunite.pays.nom_pays }}</h3>
+                        <span class="visa-tag">{{ opportunite.type_visa.nom_visa }}</span>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="alert alert-info country-item-default">Aucun pays proposant le visa étudiant n'est répertorié pour
+                le moment.</p>
+            {% endif %}
+        </div>
+
+        <hr class="my-5">
+
+        <!-- <h2 class="section-title">📚 Toutes les Filières d'Étude</h2>
+
+        <div id="filieres-container" class="row">
+            {% if liste_filieres %}
+            {% for filiere in liste_filieres %}
+            <div class="col-md-4 mb-4 filiere-item"
+                data-search-term="{{ filiere.nom_filiere|lower }} {{ filiere.domaine_etude|lower }}">
+                <div class="card filiere-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-graduation-cap"></i> {{ filiere.nom_filiere }}</h5>
+                        <p class="card-text"><small class="text-muted">Domaine : **{{ filiere.domaine_etude }}**</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="alert alert-warning filiere-item-default">Aucune filière d'étude n'est disponible pour le moment.
+            </p>
+            {% endif %}
+        </div> -->
+
+    </div>
+    <!-- documentation -->
+    <h2 class="titre">Documents nécessaires pour débuter votre procédure</h2>
+    <div class="document-container">
+
+        <ul>
+            <li>Scan passeport</li>
+            <li>Demi photo numérique 4x4</li>
+            <li>CV</li>
+            <li>Diplômes (minimum Bac)</li>
+            <li>Attestations de stages</li>
+            <li>Attestation de formation</li>
+            <li>traduction et reconnaissance des diplômes</li>
+        </ul>
+    </div>
+
+
+    <!-- victoires -->
+
+    <!-- <p class="vict">Ils sont nombreux à avoir réuissit leurs procédures sans aucunes intérruption faites nous
+        confiance et lancez <br>
+        <span class="vict2">votre procédure vous ne serez pas décu</span>
+    </p>
+
+    <h1>{{ titre_page2 }}</h1>
+
+    {% if victoires %}
+    <div class="liste-victoires">
+        {% for victoire in victoires %}
+        <div class="carte-victoire">
+            <img src="{{ victoire.photo.url }}" alt="Photo de {{ victoire.nom_voyageur }}">
+            <h2>{{ victoire.nom_voyageur }}</h2>
+            <p>
+                <strong>Métier :</strong> {{ victoire.metier }}<br>
+                <strong>Destination :</strong> {{ victoire.pays_destination }}
+            </p>
+            {% if victoire.type_visa %}
+            <p class="visa-type">
+                Visa obtenu : {{ victoire.type_visa.nom_visa }}
+            </p>
+            {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Aucune victoire enregistrée pour le Visa de Travail pour le moment.</p>
+    {% endif %} -->
+
+    <!-- contacts -->
+    <p class="vict">qu’attendez-vous pour lancer votre procédure?? nous sommes disponible 24h/24. N’hésitez pas à
+        <br>nous contacter ou nous appeler
+    </p>
+
+    <div class="contact-buttons-container">
+        <a href="https://wa.me/237676547219" class="contact-button whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="tel:+237655667744" class="contact-button call-button">
+            <i class="fas fa-phone"></i> +237 676 54 72 19
+        </a>
+    </div>
+
+    <!-- avantages visa etudiant -->
+    <section class="avantages-section">
+        <h2 class="section-title">Les avantages d'étudier à l'étranger</h2>
+        <div class="underline"></div>
+
+        <div class="avantages-container">
+
+            <div class="avantage-card">
+                <div class="icon-box">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>De meilleures opportunités professionnelles</h3>
+                <p>De nombreux pays offrent aux étudiants étrangers la possibilité de travailler pendant et après leurs
+                    études. Cela vous permet de gagner en expérience, d’améliorer votre CV et, dans certains cas, de
+                    construire une passerelle vers la résidence permanente.</p>
+            </div>
+
+            <div class="avantage-card">
+                <div class="icon-box">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Une éducation de qualité et reconnue internationalement</h3>
+                <p>Étudier à l’étranger permet d’accéder à des universités prestigieuses, des méthodes d’enseignement
+                    modernes et des programmes adaptés aux exigences du marché mondial. Un diplôme international
+                    augmente considérablement vos chances d’obtenir de meilleures opportunités professionnelles.</p>
+            </div>
+
+            <div class="avantage-card">
+                <div class="icon-box">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>Une ouverture culturelle unique</h3>
+                <p>Vivre dans un nouveau pays vous expose à d’autres cultures, langues et modes de vie. Cette expérience
+                    enrichit votre personnalité, renforce votre adaptabilité et développe vos compétences
+                    interculturelles — des qualités très recherchées sur le marché du travail.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <h1>{{titre_page3}}</h1>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Quels sont les documents nécessaires pour une demande de visa étudiant ?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer-container">
+                <p class="faq-answer">
+                    Les documents varient selon le pays, mais en général, il faut : une lettre d’admission, un passeport
+                    valide, des preuves financières, des certificats académiques et parfois une assurance santé. Bright
+                    Consulting vous aide à constituer un dossier complet et conforme.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Puis-je travailler pendant mes études à l’étranger ?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer-container">
+                <p class="faq-answer">
+                    Oui, dans beaucoup de pays comme le Canada, la France, l’Allemagne ou l’Australie, les étudiants
+                    internationaux peuvent travailler un nombre d’heures limité par semaine. Nous vous informons des
+                    règles propres à chaque destination.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Combien de temps prend une procédure d’immigration ou de visa étudiant ?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer-container">
+                <p class="faq-answer">
+
+                    La durée dépend du pays et de la période de demande. Elle peut varier de quelques semaines à
+                    plusieurs mois. Bright Consulting assure le suivi constant de votre dossier pour vous tenir informé
+                    en temps rée
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                L’agence garantit-elle l’obtention du visa ?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer-container">
+                <p class="faq-answer">
+                    Aucune agence ne peut garantir un visa, car la décision appartient uniquement à l’ambassade. En
+                    revanche, nous garantissons un accompagnement professionnel, une préparation conforme de votre
+                    dossier et une maximisation de vos chances de réussite.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="avis-section">
+        <h2>Laissez-nous votre Témoignage</h2>
+
+        <form method="post" action="{% url 'soumettre_avis' %}">
+            {% csrf_token %}
+
+            {% include 'avis/formulaire_avis.html' with form=form_avis %}
+
+            <button type="submit" class="btn btn-primary">Soumettre mon Avis</button>
+        </form>
+
+    </section>
+
+</section>
+
+
+
+{% endblock %}

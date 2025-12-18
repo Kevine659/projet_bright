@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+<h1>{{ titre_page }}</h1>
+
+
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}"> 
+    {% endblock %}
+
+{% block content %}
+
+    
+    {% if articles %}
+        <div class="articles-grid">
+            {% for article in articles %}
+                <div class="article-card">
+                    
+                    {% if article.image %}
+                        <img src="{{ article.image.url }}" alt="Image de {{ article.titre }}" class="article-image">
+                    {% endif %}
+                    
+                    <div class="article-content">
+                        <h2>{{ article.titre }}</h2>
+                        
+                        <p class="description">{{ article.description }}</p>
+                        
+                        <div class="avis-section">
+                            <p><strong>Note de l'entreprise :</strong> {{ article.avis_entreprise }}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Aucun article n'a été publié pour le moment.</p>
+    {% endif %}
+
+{% endblock %}

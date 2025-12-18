@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap');
+ 
+ .image-header-slideshow {
+   /* width: 78.5em;
+   height: 22em; */
+   max-width: 100%;
+   width: 78.5em;
+   height: 23em;
+   position: relative; /* Nécessaire pour positionner les couches d'images */
+   overflow: hidden;
+   background-image: url('../images/services.png');
+   background-size: cover;
+
+}
+
+
+.text {
+     margin-left: auto;
+    margin-right: auto
+}
+
+
+
+.text h1 {
+    position: absolute; 
+    font-size: 4.5em;
+    top: 2.5em;
+    left: 5em;   
+    font-family: 'Manrope', sans-serif;
+    color: #ffff;
+    font-weight: 400;
+}
+
+
+/* --- Couleurs et Général --- */
+:root {
+    --pink-purple: #993399; /* Couleur du titre des cartes (Magenta/Violet) */
+    --main-dark-blue: #483d8b; /* Couleur du titre principal */
+    --light-grey-bg: #f8f8f8;
+}
+
+/* --- Section Conteneur --- */
+.services-digital-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    margin-top: -3em;
+}
+
+/* --- En-tête (Titre et Image Principale) --- */
+.services-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 40px;
+}
+
+.services-title {
+    color: var(--main-dark-blue);
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 400px; /* Donne de l'espace au titre */
+}
+
+.services-image-container {
+    flex-shrink: 0;
+    max-width: 55%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Conteneur des Cartes --- */
+.services-cards-container {
+    display: grid;
+    /* Crée 3 colonnes de taille égale */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* --- Style de la Carte Individuelle --- */
+.service-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    /* Ombre légère pour le look "flottant" */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #f0f0f0;
+    transition: box-shadow 0.3s;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title-pink {
+    color: var(--pink-purple);
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* --- Adaptabilité (Mobile) --- */
+@media (max-width: 992px) {
+    .services-header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services-title {
+        max-width: none;
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+
+    .services-image-container {
+        max-width: 100%;
+    }
+    
+    .services-cards-container {
+        /* Les cartes passent sur une colonne sur les petits écrans */
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+/* Variables pour les couleurs */
+:root {
+    --purple-text: #483d8b; /* Bleu/Violet foncé pour les titres */
+    --card-background: #fff0ff; /* Arrière-plan rose/mauve très clair */
+    --card-border: #ee82ee; /* Violet clair pour la bordure (invisible dans la capture mais souvent utilisé) */
+}
+
+/* Conteneur principal */
+.services-management {
+    max-width: 1000px; /* Limiter la largeur si nécessaire */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Titre de la section */
+.services-management h3 {
+    font-size: 2em;
+    color: var(--purple-text);
+    margin-bottom: 20px;
+    /* Assure que le titre est à gauche, au-dessus des éléments flottants */
+    clear: both; 
+    text-align: left;
+}
+
+/* Conteneur de l'image (pour la placer à droite) */
+.image-container {
+    float: right; /* Place l'image à droite */
+    margin: 0 0 20px 30px; /* Marge autour pour l'espacement */
+    width: 350px; /* Taille de l'image (ajuster au besoin) */
+    height: 280px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre l'espace sans distorsion excessive */
+    position: relative;
+    top: 5em;
+    left: 3em;
+}
+
+/* Style des cartes de service (Service VISA et Community Management) */
+.service-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border); /* Petite bordure mauve autour de la carte */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Coins légèrement arrondis */
+    text-align: left;
+    /* Assure que les cartes ne vont pas sous l'image */
+    max-width: 600px; 
+}
+
+/* Titre dans les cartes */
+.service-card h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--purple-text);
+    margin-bottom: 5px;
+}
+
+/* Paragraphe dans les cartes */
+.service-card p {
+    font-size: 1em;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* Outil pour nettoyer les flottants pour les éléments suivants */
+.clear {
+    clear: both;
+}
+
+/* Variables (à ajouter ou s'assurer qu'elles existent dans votre fichier styles.css) */
+:root {
+    --purple-text: #483d8b; /* Bleu/Violet foncé pour les titres */
+    --card-background-light: #fff0ff; /* Arrière-plan rose/mauve très clair */
+    --card-border-light: #ee82ee; /* Violet clair pour la bordure */
+    --white-bg: #ffffff;
+}
+
+
+.logistic-image {
+    /* Remplacer par l'image e-commerce/logistique */
+    background-image: url('url_image_ecommerce.jpg');
+    height: 250px;
+    width: 400px;
+    float: right;
+    margin-left: 20px;
+    position: relative;
+    left: 2em;
+    top: 0.8em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Ajustez les marges si nécessaire pour qu'elle corresponde parfaitement à votre capture */
+}
+
+/* Les cartes de Logistique (Livraison Rapide et Boutique E-commerce) réutilisent la classe .service-card */
+.service-card.purple-bg {
+    background-color: var(--card-background-light);
+    border: 1px solid var(--card-border-light);
+}
+
+/* --- Styles pour Cours de Langue & Formations --- */
+
+.training-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    padding-top: 50px; /* Espace au-dessus */
+}
+
+.training-section h3 {
+    font-size: 2em;
+    color: var(--purple-text);
+    margin-bottom: 20px;
+    clear: both;
+    text-align: left;
+}
+
+/* Conteneur de l'image de la formation */
+.training-image-container {
+    float: right; /* Place l'image à droite */
+    margin: 0 0 30px 30px;
+    width: 400px; /* Ajuster la taille de l'image des étudiants */
+    height: 250px;
+    overflow: hidden;
+    /* Remplacer par l'image des étudiants */
+    background-image: url('../images/formation.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+/* Conteneur des deux cartes de formation/langue */
+.card-group {
+    display: flex;
+    gap: 30px; /* Espace entre les deux cartes */
+    /* Assure que ce groupe n'est pas trop large si l'image flotte */
+    max-width: 600px; 
+}
+
+.training-card {
+    flex: 1; /* Permet aux cartes de prendre une taille égale */
+    padding: 30px;
+    border: 1px solid var(--card-border-light);
+    border-radius: 5px;
+    text-align: left;
+    background-color: var(--white-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Légère ombre */
+}
+
+.training-card h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--purple-text);
+    margin-bottom: 10px;
+}
+
+/* Ajustements spécifiques aux cartes pour la bordure autour */
+.language-card {
+    /* Style spécifique s'il y en a, ici on utilise la même bordure */
+}
+
+.professional-card {
+     /* Style spécifique s'il y en a */
+}
+
+/* Nettoyage des flottants */
+.clear {
+    clear: both;
+}
+
+/* Media Query pour la réactivité */
+@media (max-width: 768px) {
+    .training-image-container {
+        float: none;
+        margin: 20px auto;
+        width: 100%;
+        height: 200px;
+    }
+
+    .card-group {
+        flex-direction: column; /* Cartes empilées verticalement */
+        max-width: 100%;
+        gap: 20px;
+    }
+}

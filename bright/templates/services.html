@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="image-header-slideshow">
+    <div class="slide-item one"></div>
+    <div class="slide-item two"></div>
+    <div class="slide-item three"></div>
+</div>
+<div class="text">
+    <h1>Nos services</h1>
+</div>
+
+<section class="services-digital-section">
+    <p class="section-description">Découvrez comment nous pouvons vous aider à atteindre vos objectifs.</p>
+
+    <div class="services-header-content">
+        <h2 class="services-title">Services Informatiques & Digital</h2>
+        <div class="services-image-container">
+            <img src="{% static 'images/info.jpg' %}" alt="Développeur travaillant sur trois écrans"
+                class="service-main-image">
+        </div>
+    </div>
+
+    <div class="services-cards-container">
+
+        <div class="service-card">
+            <h3 class="card-title-pink">Branding & Identité Visuelle</h3>
+            <p class="card-text">Création de supports graphiques percutants pour vos campagnes de marketing. Création de
+                logos et de chartes graphiques pour une image de marque unique et mémorable.</p>
+        </div>
+
+        <div class="service-card">
+            <h3 class="card-title-pink">Création de Sites Web</h3>
+            <p class="card-text">Conception et développement de sites web professionnels, modernes et optimisés pour le
+                référencement.</p>
+        </div>
+
+        <div class="service-card">
+            <h3 class="card-title-pink">Applications Mobiles & Web</h3>
+            <p class="card-text">Développement d'applications sur mesure pour iOS, Android et le web, pour répondre à
+                vos besoins spécifiques.</p>
+        </div>
+
+    </div>
+
+    <section class="services-management">
+        <h3>Services de Conseil et de Gestion</h3>
+
+        <div class="image-container">
+            <img src="{% static 'images/visa.jpg' %}" alt="Développeur travaillant sur trois écrans">
+
+        </div>
+
+        <div class="service-card visa-service">
+            <h4>Service VISA</h4>
+            <p>Assistance complète pour l'obtention de visas pour diverses destinations. Nous simplifions vos démarches
+                administratives.</p>
+        </div>
+
+        <div class="service-card community-management">
+            <h4>Community Management</h4>
+            <p>Gestion de vos réseaux sociaux pour augmenter votre visibilité, engager votre audience et construire une
+                communauté fidèle.</p>
+        </div>
+
+        <div class="clear"></div>
+    </section>
+
+    <section class="services-management">
+        <div class="service-category">
+            <h3>Services de Logistique & E-commerce</h3>
+            <div class="image-container logistic-image">
+                <img src="{% static 'images/commerce.jpg' %}" alt="Développeur travaillant sur trois écrans">
+
+            </div>
+
+            <div class="service-card purple-bg">
+                <h4>Livraison Rapide</h4>
+                <p>Service de livraison fiable et sécurisé pour vos colis et documents, à l'échelle locale.</p>
+            </div>
+
+            <div class="service-card purple-bg">
+                <h4>Boutique E-commerce</h4>
+                <p>Création de votre boutique en ligne clé en main pour vendre vos produits et services 24/7.</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </section>
+
+
+
+    <section class="training-section">
+        <h3>Cours de Langue & Formations</h3>
+
+        <div class="training-image-container">
+
+
+        </div>
+
+        <div class="card-group">
+            <div class="training-card language-card">
+                <h4>Cours de Langue</h4>
+                <p>Apprenez l'anglais, l'allemand et l'italien avec nos cours interactifs pour tous les niveaux.</p>
+            </div>
+
+            <div class="training-card professional-card">
+                <h4>Formations Professionnelles</h4>
+                <p>Développez vos compétences avec nos formations en</p>
+                <p>Graphic Design, Web Design, Montage Vidéo et Création d'Applications.</p>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </section>
+</section>
+
+
+{% endblock %}

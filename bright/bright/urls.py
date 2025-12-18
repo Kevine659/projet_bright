@@ -16,10 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Bright_consulting.views import home
-
+from Bright_consulting.views import formulaire, liste_articles_blog, soumettre_avis, home, visa_etudiant, visa_travail, cours, visa_tourisme, service
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
+    path('avis/soumettre/', soumettre_avis, name='soumettre_avis'),
+    
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', home, name = 'home'),
+    path('visa_etudiant/', visa_etudiant ,name = 'visa_etudiant'),
+    path('visa_travail/', visa_travail, name = 'visa_travail'),
+    path('cours/', cours, name = 'cours'),
+    path('visa_tourisme/', visa_tourisme, name = 'visa_tourisme'),
+    path('service/', service, name = 'service'),
+    path('blog/', liste_articles_blog, name = 'blog'),
+    path('formulaire/', formulaire, name = 'formulaire'),
+    
 ]
+
+
+if settings.DEBUG:
+    # Pour servir les fichiers médias (images téléchargées)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+    # Pour servir les fichiers statiques (CSS, JS) non collectés
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])

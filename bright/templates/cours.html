@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cours.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="image-header-slideshow">
+    <div class="slide-item one"></div>
+    <div class="slide-item two"></div>
+    <div class="slide-item three"></div>
+</div>
+
+<h1 class="langue">{{ titre }}</h1>
+
+{% if tous_les_cours %}
+<div class="cours-liste-container">
+    {% for cours in tous_les_cours %}
+    <div class="cours-card">
+        <h2>{{ cours.nom_cours }}</h2>
+        <p class="description">{{ cours.description_programme }}</p>
+
+        <hr>
+
+        <!-- <h3>Sections et Horaires Disponibles</h3> -->
+
+        {% if cours.sectionhoraire_set.all %}
+        <div class="sections-grid">
+            {% for section in cours.sectionhoraire_set.all %}
+            <!-- <div class="section-item">
+                <h4>{{ section.nom_section }}</h4>
+                <ul>
+                    <li><strong>Jours :</strong> {{ section.jours_semaine }}</li>
+                    <li><strong>Heure de Début :</strong> {{ section.heure_debut|time:"H:i" }}</li>
+                    <li><strong>Durée :</strong> {{ section.duree_heures }} heures</li>
+                    <li><strong>Prix Total :</strong> {{ section.prix_total }}</li>
+                    {% if section.date_debut %}
+                    <li><strong>Date de Début :</strong> {{ section.date_debut|date:"d M Y" }}</li>
+                    {% endif %}
+                </ul>
+            </div> -->
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- <p>Aucune section ni horaire n'est actuellement programmé pour ce cours.</p> -->
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>Aucun programme de cours de langue n'est actuellement répertorié.</p>
+{% endif %}
+
+
+{% endblock %}

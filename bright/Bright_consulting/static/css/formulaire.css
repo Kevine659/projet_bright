@@ -1,0 +1,63 @@
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 50px auto; /* Ajoute des marges automatiques à gauche et à droite pour centrer, et 50px en haut et en bas */
+}
+
+h2 {
+    color: #31006E;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.button-envoie {
+    width: 100%;
+    padding: 15px;
+    background-color: #25D366; /* Vert WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #128C7E;
+}

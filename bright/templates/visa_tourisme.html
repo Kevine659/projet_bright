@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/visa_tourisme.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+<script src="{% static 'js/visiteur.js' %}"></script>
+
+<div class="image-header-slideshow">
+    <div class="slide-item one"></div>
+    <div class="slide-item two"></div>
+    <div class="slide-item three"></div>
+</div>
+
+<div class="text">
+    <h1>Votre aventure commence ici.</h1>
+    <h3>Obtenez votre visa touristique sans tracas, avec l'aide de nos experts.</h3>
+</div>
+
+<h1 class="titres">S’épanouir c’est bien mais pour tout projets, des règles sont appliquées . pour votre visa tourisme
+    quels sont donc les critères d’éligibilité??</h1>
+<img class="images-tourisme2" src="{% static 'images/tourism.webp' %}" alt="font">
+<div class="visa-criteria-container">
+    <div class="content-box">
+        <p class="intro-text">
+            Les consulats évaluent votre dossier pour s'assurer que vous n'avez pas l'intention d'immigrer illégalement.
+            Les critères incluent :
+        </p>
+
+        <div class="criterion-box">
+            <p><strong>Liens forts avec votre pays d'origine</strong> : Preuve que vous avez des raisons de retourner
+                chez vous (famille, emploi, biens, etc.).</p>
+        </div>
+
+        <div class="criterion-box">
+            <p><strong>Intention de retour</strong> : Votre dossier doit démontrer clairement que votre séjour est
+                temporaire.</p>
+        </div>
+
+        <div class="criterion-box">
+            <p><strong>Absence d'antécédents</strong> : Ne pas avoir d'infractions d'immigration ou d'antécédents
+                criminels.</p>
+        </div>
+
+        <div class="criterion-box">
+            <p><strong>Moyens financiers</strong> : Avoir les fonds nécessaires pour couvrir votre séjour.</p>
+        </div>
+    </div>
+</div>
+
+<!-- destinations -->
+
+<h1 class="destination">{{ titre }}</h1>
+
+<div class="search-form">
+    <input type="text" id="search-input" placeholder="Rechercher un pays..." class="search-input">
+</div>
+
+{% if visas_par_pays %}
+<ul class="pays-liste" id="pays-liste">
+    {% for visa in visas_par_pays %}
+    <li class="pays-item">
+        {{ visa.pays.nom_pays }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<p id="js-no-results" style="display:none; text-align: center; font-style: italic; color: #6c757d; margin-top: 30px;">
+    Aucun résultat trouvé.</p>
+
+
+
+<!-- documentation -->
+<h2 class="titre">Documents nécessaires pour débuter votre procédure</h2>
+<div class="document-container">
+
+    <ul>
+        <li>Scan passeport</li>
+        <li>Demi photo numérique 4x4</li>
+        <li>CV</li>
+        <li>CNI ou carte d'identité</li>
+        <li>Diplômes (minimum Bac)</li>
+        <li>Attestations de stages</li>
+        <li>Attestation de formation</li>
+        <li>traduction et reconnaissance des diplômes</li>
+    </ul>
+</div>
+
+
+
+</section>
+
+
+
+<div class="interview-prep-page">
+
+    <div class="header-and-image">
+        <div class="header-content">
+            <h2 class="sections-title">Préparation à l'entretien</h2>
+        </div>
+
+    </div>
+
+    <div class="content-text">
+        <p>Si un entretien est requis, notre équipe vous aidera à vous y préparer. Voici quelques points clés :</p>
+
+        <ul>
+            <li><strong>Soyez honnête et concis</strong> : Répondez directement aux questions sans donner de détails
+                inutiles.</li>
+            <li><strong>Connaissez votre itinéraire</strong> : Soyez prêt à décrire votre voyage, les lieux que vous
+                visiterez et la durée de votre séjour.</li>
+            <li><strong>Prouvez vos liens</strong> : Mettez l'accent sur les raisons qui vous lient à votre pays
+                (famille, travail, études, biens immobiliers).</li>
+            <li><strong>Préparez-vous à prouver vos finances</strong> : Soyez prêt à expliquer comment vous financerez
+                votre voyage.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="special-cases-container">
+    <h2 class="section-titre">Cas particuliers et situations spéciales</h2>
+
+    <h1 class="intro-text">
+        Certaines situations demandent une attention particulière. Nous sommes là pour vous accompagner :
+    </h1>
+
+    <ul class="special-list">
+        <li>
+            <strong>Voyage avec des mineurs</strong> : Des documents supplémentaires sont requis, comme un consentement
+            notarié des parents ou tuteurs.
+        </li>
+        <li>
+            <strong>Antécédents criminels</strong> : Un casier judiciaire peut affecter votre demande. Nous vous
+            aiderons à rassembler les documents nécessaires et à préparer une explication pour les autorités.
+        </li>
+        <li>
+            <strong>Visites à des membres de la famille/amis</strong> : Une lettre d'invitation de votre hôte peut
+            renforcer votre dossier, ainsi que des preuves de leur statut de résidence.
+        </li>
+    </ul>
+</div>
+
+<!-- victoires -->
+
+<!-- <p class="vict1">Ils sont nombreux à avoir réuissit leurs procédures sans aucunes intérruption faites nous confiance et
+    lancez <br>
+    <span class="vict2">votre procédure vous ne serez pas décu</span>
+</p>
+
+<h1 class="victory">{{ titre_page2 }}</h1>
+
+{% if victoires %}
+<div class="liste-victoires">
+    {% for victoire in victoires %}
+    <div class="carte-victoire">
+        <img src="{{ victoire.photo.url }}" alt="Photo de {{ victoire.nom_voyageur }}">
+        <h2>{{ victoire.nom_voyageur }}</h2>
+        <p>
+            <strong>Métier :</strong> {{ victoire.metier }}<br>
+            <strong>Destination :</strong> {{ victoire.pays_destination }}
+        </p>
+        {% if victoire.type_visa %}
+        <p class="visa-type">
+            Visa obtenu : {{ victoire.type_visa.nom_visa }}
+        </p>
+        {% endif %}
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% else %}
+<p>Aucune victoire enregistrée pour le Visa de Travail pour le moment.</p>
+{% endif %} -->
+
+<!-- contacts -->
+<p class="vict1">qu’attendez-vous pour lancer votre procédure?? nous sommes disponible 24h/24. N’hésitez pas à
+    <br>nous contacter ou nous appeler
+</p>
+
+<div class="contact-buttons-container">
+    <a href="https://wa.me/237676547219" class="contact-button whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="tel:+237655667744" class="contact-button call-button">
+        <i class="fas fa-phone"></i> +237 676 54 72 19
+    </a>
+</div>
+</section>
+
+<!-- FAQ -->
+<!-- <h1 class="victory">{{titre_page3}}</h1> -->
+
+<div class="faq-container">
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Quels documents dois-je fournir pour un visa touristique ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+                Les documents essentiels incluent un passeport valide, une réservation de vol, une preuve d’hébergement,
+                un relevé bancaire récent et un motif clair de voyage. L’agence vous aide à constituer un dossier propre
+                et complet.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Puis-je prolonger mon séjour touristique une fois à l’étranger ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+                Tout dépend des lois du pays. Certains permettent une extension, d’autres non. Avant votre départ, nous
+                vous informons des règles afin d’éviter tout dépassement de séjour.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Combien de temps faut-il pour obtenir un visa touristique ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+                Les délais sont généralement courts, allant de quelques jours à quelques semaines selon la destination.
+                Bright Consulting vous accompagne pour accélérer la procédure et éviter les erreurs courantes.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Le visa touristique permet-il de travailler ?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-container">
+            <p class="faq-answer">
+                Non. Le visa touristique ne permet pas de travailler ou d’exercer une activité rémunérée. Pour
+                travailler légalement, il faut une autorisation ou un visa spécifique. Nous vous orientons vers les
+                bonnes options selon votre projet.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<section class="avis-section">
+    <h2>Laissez-nous votre Témoignage</h2>
+
+    <form method="post" action="{% url 'soumettre_avis' %}">
+        {% csrf_token %}
+
+        {% include 'avis/formulaire_avis.html' with form=form_avis %}
+
+        <button type="submit" class="btn btn-primary">Soumettre mon Avis</button>
+    </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

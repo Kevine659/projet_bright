@@ -1,0 +1,21 @@
+
+{% if form.errors %}
+    <div style="color: red;">
+        Veuillez corriger les erreurs ci-dessous.
+    </div>
+{% endif %}
+
+<div class="form-group">
+    <label for="{{ form.nom_auteur.id_for_label }}">{{ form.nom_auteur.label }}</label>
+    {{ form.nom_auteur }}
+</div>
+
+<div class="form-group">
+    <label for="{{ form.contenu_avis.id_for_label }}">{{ form.contenu_avis.label }}</label>
+    {{ form.contenu_avis }}
+</div>
+
+<div class="form-group">
+    <label for="{{ form.note.id_for_label }}">{{ form.note.label }}</label>
+    {{ form.note }}
+</div>

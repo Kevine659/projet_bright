@@ -1,0 +1,692 @@
+ .image-header-slideshow {
+     /* width: 78.5em;
+   height: 22em; */
+     max-width: 100%;
+     width: 78.5em;
+     height: 25em;
+     position: relative;
+     overflow: hidden;
+     background-image: url('../images/voyagers.jpg');
+
+ }
+
+ .text {
+     margin-left: auto;
+     margin-right: auto
+ }
+
+ .text h1 {
+     position: absolute;
+     font-size: 3em;
+     top: 4.5em;
+     left: 5.5em;
+     font-family: 'Manrope', sans-serif;
+     color: #ffff;
+ }
+
+ .text h3 {
+     position: absolute;
+     font-size: 1em;
+     top: 19.5em;
+     color: #ffff;
+     font-family: 'Manrope', sans-serif;
+     left: 21.3em;
+     line-height: 1.9;
+     font-weight: 400;
+
+ }
+
+ .text {
+     margin-left: auto;
+     margin-right: auto;
+
+ }
+
+ /* .titre{
+    text-align: center;
+    font-family: 'Manrope';
+    font-weight: 300;
+    padding: 2em;
+    color: black;
+
+} */
+
+ .titres {
+     color: black;
+     text-align: center;
+     font-family: 'Manrope';
+     font-weight: 200;
+     padding: 0.3em;
+     line-height: 1.9;
+ }
+
+
+ .visa-criteria-container {
+
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     padding: 20px;
+     background-color: #f8f8f8;
+     min-height: 600px;
+ }
+
+ .content-box {
+
+     background-color: #f9eef4;
+     padding: 30px;
+     border-radius: 15px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     max-width: 600px;
+     margin-left: 20px;
+ }
+
+ .intro-text {
+
+     text-align: center;
+     color: #4a004a;
+     font-size: 1.1em;
+     font-weight: 500;
+     margin-bottom: 25px;
+     line-height: 1.4;
+     font-family: 'Manrope', sans-serif;
+
+ }
+
+ .criterion-box {
+     background-color: white;
+     padding: 15px 20px;
+     margin-bottom: 15px;
+     border-radius: 10px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+     border: 1px solid #e0e0e0;
+ }
+
+ .criterion-box p {
+     margin: 0;
+     font-family: 'Manrope', sans-serif;
+     color: #333;
+     font-size: 1em;
+ }
+
+ .criterion-box strong {
+
+     color: #8b008b;
+     font-weight: 700;
+ }
+
+ .images-tourisme2 {
+     position: absolute;
+     top: 48em;
+     left: 3em;
+ }
+
+ h1 {
+     font-family: 'Manrope', sans-serif;
+     color: black;
+     font-size: 20px;
+ }
+
+ :root {
+
+     --purple-main: #8A2BE2;
+     --text-color: #333;
+ }
+
+ .interview-prep-page {
+     max-width: 900px;
+     margin: 40px auto;
+     padding: 20px;
+     font-family: Arial, sans-serif;
+ }
+
+ .header-and-image {
+     display: flex;
+     align-items: flex-start;
+     justify-content: space-between;
+     margin-bottom: 30px;
+ }
+
+ .header-content {
+     flex-grow: 1;
+     padding-top: 20px;
+ }
+
+ .sections-title {
+     /* Style du titre "Préparation à l'entretien" */
+     font-size: 1.5em;
+     font-weight: 500;
+     color: var(--purple-main);
+     padding-bottom: 8px;
+     border-bottom: 2px solid var(--purple-main);
+     display: inline-block;
+     margin: 0;
+ }
+
+
+ /* Si l'image est plus large, le titre et l'image peuvent se chevaucher ou se réaligner */
+ @media screen and (max-width: 600px) {
+     .header-and-image {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .prep-image {
+         margin-top: 20px;
+     }
+
+     .section-title {
+         border-bottom: none;
+         /* Enlever la bordure en mode mobile pour un meilleur look */
+     }
+ }
+
+
+ .content-text {
+     /* Style pour le paragraphe d'introduction et la liste */
+     color: var(--text-color);
+     margin-top: 20px;
+ }
+
+ .content-text p {
+     font-size: 1.1em;
+     line-height: 1.6;
+     margin-bottom: 20px;
+ }
+
+ .content-text ul {
+     list-style-type: disc;
+     padding-left: 20px;
+     margin: 0;
+ }
+
+ .content-text li {
+     font-size: 1.1em;
+     line-height: 1.8;
+     margin-bottom: 15px;
+ }
+
+ .content-text li strong {
+     color: var(--purple-main);
+     font-weight: bold;
+ }
+
+ :root {
+
+     --purple-main: #8A2BE2;
+     --pink-line: #EE82EE;
+     --text-color: #333;
+ }
+
+ .special-cases-container {
+     /* Conteneur principal pour définir le style général et la largeur */
+     max-width: 800px;
+     margin: 40px auto;
+     padding: 20px;
+     font-family: Arial, sans-serif;
+     color: var(--text-color);
+ }
+
+ .section-titre {
+     /* Style du titre "Cas particuliers et situations spéciales" */
+     font-size: 1.5em;
+     font-weight: 500;
+     color: var(--purple-main);
+     margin-bottom: 25px;
+     padding-bottom: 5px;
+     border-bottom: 2px solid var(--pink-line);
+     display: inline-block;
+ }
+
+ .intro-text {
+     /* Style du paragraphe d'introduction */
+     font-size: 1.1em;
+     line-height: 1.6;
+     margin-bottom: 30px;
+ }
+
+ .special-list {
+     /* Liste des cas particuliers */
+     list-style-type: none;
+     padding-left: 0;
+     margin: 0;
+ }
+
+ .special-list li {
+     /* Style de chaque élément de la liste */
+     font-size: 1.1em;
+     line-height: 1.8;
+     margin-bottom: 25px;
+     padding-left: 20px;
+     position: relative;
+ }
+
+ .special-list li::before {
+     /* Créer une puce (point noir) personnalisée */
+     content: "•";
+     color: var(--text-color);
+     font-size: 1.5em;
+     line-height: 1;
+     position: absolute;
+     left: 0;
+     top: 0;
+ }
+
+ .special-list strong {
+     /* Mise en gras et couleur du titre de chaque situation */
+     font-weight: bold;
+     color: var(--text-color);
+ }
+
+ /* destinations */
+ .search-form {
+     max-width: 600px;
+     margin: 0 auto 40px auto;
+     display: flex;
+     gap: 10px;
+ }
+
+ .search-input {
+     flex-grow: 1;
+     padding: 10px 15px;
+     border: 1px solid #ccc;
+     border-radius: 6px;
+     font-size: 16px;
+     transition: border-color 0.3s;
+ }
+
+ .search-input:focus {
+     border-color: #007bff;
+     outline: none;
+ }
+
+ /* Styles pour la liste des pays (repris de la réponse précédente) */
+ .destination {
+     text-align: center;
+     color: #007bff;
+     font-weight: 200;
+     padding: 2em;
+     margin-bottom: 40px;
+     font-size: 2em;
+ }
+
+ .pays-liste {
+     list-style: none;
+     padding: 0;
+     margin: 0 auto;
+     max-width: 900px;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 20px;
+ }
+
+ .pays-liste li {
+     background-color: #ffffff;
+     padding: 15px 20px;
+     border-radius: 8px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     font-size: 1.1em;
+     font-weight: 600;
+     color: #333;
+     text-align: center;
+     transition: transform 0.2s, box-shadow 0.2s;
+     border-left: 5px solid #007bff;
+ }
+
+ .pays-liste li:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+     cursor: pointer;
+ }
+
+ p {
+     text-align: center;
+     
+     color: #6c757d;
+     margin-top: 30px;
+ }
+
+
+ /* documentation */
+
+ .document-container {
+     background-color: #f7e6f9;
+     padding: 50px;
+     max-width: 1000px;
+     margin: 20px auto;
+
+
+ }
+
+ .titre {
+     color: #000080;
+     text-align: center;
+     margin-bottom: 20px;
+     font-size: 1.5em;
+     padding: 2em;
+     font-weight: 400;
+ }
+
+ .document-container ul {
+     margin: 0;
+     padding: 0 0 0 20px;
+     list-style-type: disc;
+     margin-left: 18em;
+ }
+
+ .document-container ul li {
+     color: #333;
+     line-height: 2;
+     font-weight: bold;
+     font-size: 1em;
+ }
+
+
+ /* victoires */
+
+ h1 {
+     text-align: center;
+     color: #007bff;
+     margin-bottom: 40px;
+ }
+
+ .liste-victoires {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 30px;
+     padding: 0;
+     list-style: none;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .carte-victoire {
+     background-color: #ffffff;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     padding: 0 0 20px 0;
+     text-align: center;
+     overflow: hidden;
+     transition: transform 0.3s, box-shadow 0.3s;
+ }
+
+ .carte-victoire:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+ }
+
+ /* Style de l'image (non circulaire, occupe une partie du haut du cadre) */
+ .carte-victoire img {
+     width: 100%;
+     height: 200px;
+     object-fit: cover;
+     border-radius: 10px 10px 0 0;
+     margin: 0;
+
+     border-bottom: 1px solid #eee;
+ }
+
+ /* Conteneur pour le texte, ajouté pour le padding interne */
+ .carte-victoire h2 {
+     font-size: 1.5em;
+     color: #333;
+     margin: 15px 0 10px 0;
+     padding: 0 15px;
+ }
+
+ .carte-victoire p {
+     margin: 8px 0;
+     padding: 0 15px;
+     font-size: 0.95em;
+     color: #555;
+ }
+
+ .carte-victoire strong {
+     color: #007bff;
+     font-weight: bold;
+ }
+
+ .visa-type {
+     margin-top: 20px;
+     padding: 8px 15px;
+     background-color: #e9f5ff;
+     color: #007bff;
+     border-radius: 5px;
+     display: inline-block;
+     font-weight: 600;
+ }
+
+ hr {
+     display: none;
+ }
+
+ .vict1 {
+     text-align: center;
+     font-weight: 400;
+     font-size: 20px;
+     padding: 2em;
+     color: black;
+ }
+
+ .victory {
+    font-weight: lighter;
+    font-size: 2em;
+ }
+
+
+ /* contact */
+ .contact-buttons-container {
+     display: flex;
+     gap: 20px;
+     align-items: center;
+     justify-content: center;
+     padding: 20px;
+ }
+
+ .contact-button {
+     /* Style de base commun aux deux boutons */
+     display: flex;
+     align-items: center;
+     padding: 12px 25px;
+     font-size: 18px;
+     font-weight: bold;
+     color: white;
+     text-decoration: none;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     transition: background-color 0.3s, transform 0.3s;
+ }
+
+ .contact-button i {
+     /* Style de l'icône */
+     margin-right: 10px;
+     font-size: 20px;
+ }
+
+
+ .whatsapp-button {
+     background-color: #25D366;
+ }
+
+ .whatsapp-button:hover {
+     background-color: #1DA854;
+     transform: translateY(-2px);
+ }
+
+
+ .call-button {
+     background-color: #FF0000;
+ }
+
+ .call-button:hover {
+     background-color: #CC0000;
+     transform: translateY(-2px);
+ }
+
+ /* FAQ */
+
+ .faq-container {
+     max-width: 100%;
+     margin: 50px auto;
+     padding: 20px;
+     border-radius: 8px;
+ }
+
+ .faq-item {
+     background-color: #fff;
+     border: 1px solid #0C0570;
+     border-radius: 4px;
+     margin-bottom: 15px;
+     transition: all 0.3s ease-in-out;
+
+ }
+
+ .faq-question {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     padding: 15px 20px;
+     background: none;
+     border: none;
+     cursor: pointer;
+     text-align: left;
+     font-size: 1.1em;
+     font-weight: 500;
+     color: #343a40;
+     position: relative;
+ }
+
+ .faq-icon {
+     font-size: 1.5em;
+     color: #6f42c1;
+     font-weight: 300;
+     line-height: 1;
+     transition: transform 0.3s ease;
+ }
+
+ .faq-question::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 20px;
+     right: 20px;
+     border-bottom: 1px solid #dee2e6;
+     transition: border-bottom 0.3s ease;
+ }
+
+ .faq-item.open .faq-question::after {
+     border-bottom: none;
+ }
+
+ .faq-answer-container {
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.4s ease-in-out;
+ }
+
+ .faq-item.open .faq-answer-container {
+     max-height: 1000px;
+ }
+
+ .faq-answer {
+     padding: 10px 20px 20px 20px;
+     margin: 0;
+     color: #6c757d;
+ }
+
+
+ /* formulaire avis */
+
+ form {
+     max-width: 600px;
+     margin: 40px auto;
+     padding: 30px;
+     background-color: #ffffff;
+     border-radius: 8px;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ }
+
+ h2 {
+     text-align: center;
+     color: #000080;
+     font-weight: 200;
+     margin-bottom: 30px;
+     font-size: 1.8em;
+ }
+
+ /* Conteneur pour chaque champ (nom, avis, note) */
+ .form-group {
+     margin-bottom: 20px;
+ }
+
+ label {
+     display: block;
+     margin-bottom: 8px;
+     font-weight: 600;
+     color: #333;
+     font-size: 1em;
+ }
+
+
+ .form-control {
+     width: 100%;
+     padding: 12px 15px;
+     border: 1px solid #ced4da;
+     border-radius: 4px;
+     box-sizing: border-box;
+     font-size: 16px;
+     transition: border-color 0.3s, box-shadow 0.3s;
+ }
+
+ .form-control:focus {
+     border-color: #007bff;
+     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+     outline: none;
+ }
+
+ textarea.form-control {
+     resize: vertical;
+ }
+
+
+ select.form-control {
+     appearance: none;
+     padding-right: 30px;
+     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-24.8%200L146.2%20185.6%2030.3%2069.4a17.6%2017.6%200%200%200-24.8%2024.8l128%20128c6.6%206.6%2017.4%206.6%2024%200l128-128c6.5-6.6%206.5-17.4.1-24.8z%22%2F%3E%3C%2Fsvg%3E');
+     background-repeat: no-repeat;
+     background-position: right 10px center;
+     background-size: 12px;
+ }
+
+ /* Style des messages d'erreur */
+ div[style*="color: red;"] {
+     background-color: #f8d7da;
+     color: #721c24 !important;
+     border: 1px solid #f5c6cb;
+     padding: 10px;
+     margin-bottom: 20px;
+     border-radius: 4px;
+     font-weight: 500;
+ }
+
+ /* Style du bouton de soumission */
+ .btn-primary {
+     display: block;
+     width: 100%;
+     padding: 12px;
+     font-size: 1.1em;
+     font-weight: 700;
+     color: #ffffff;
+     background-color: #007bff;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background-color 0.3s, box-shadow 0.3s;
+ }
+
+ .btn-primary:hover {
+     background-color: #0056b3;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }

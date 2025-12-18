@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/formulaire.css' %}">
+{% endblock %}
+
+{% block content %}
+<script src="{% static 'js/formulaire.js' %}"></script>
+
+<div class="form-container">
+    <h2>🚀 Demande de Rendez-vous chez Bright Consulting</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="nom">Nom & Prénom(s) :</label>
+            <input type="text" id="nom" name="Nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tel">Téléphone :</label>
+            <input type="tel" id="tel" name="Tél" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="projet">Projet d'Immigration :</label>
+            <select id="projet" name="Projet" required>
+                <option value="">Sélectionnez un projet</option>
+                <option value="Études">Études à l'étranger (visa étudiant)</option>
+                <option value="Travail">Permis de travail/Emploi (visa travail)</option>
+                <option value="Regroupement">Tourisme (visa visiteur)</option>
+                <option value="Autre">Autres</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="pays">Pays de destination :</label>
+            <input type="text" id="pays" name="Pays" placeholder="Ex: Canada, France..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date souhaitée :</label>
+            <input type="date" id="date" name="Date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="heure">Heure souhaitée :</label>
+            <input type="time" id="heure" name="Heure" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nom">Motif de la demande :</label>
+            <input type="text" id="motif" name="Nom" required>
+        </div>
+
+        <button class="button-envoie" type="submit">Envoyer la Demande</button>
+    </form>
+</div>
+{% endblock %}

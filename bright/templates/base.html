@@ -1,54 +1,134 @@
-{% load static %}  <!DOCTYPE html>
-<html lang="en">
+{% load static %} 
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Consulting</title>  
+    <title>{% block title %}Bright Consulting{% endblock %}</title> 
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+    <link rel="shortcut icon" href="{% static 'favicons/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+    <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
-    <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+
+    {% block extra_css %}{% endblock %}
 
 </head>
 <body>
+    
     <nav>
-        <div class="header1"> 
-            <ul>
-                <li><i class="fa-solid fa-envelope"></i> brightconsulting@gmail.com</li>
+        <div class="header2">
+            
+            <a href="{% url 'home' %}">
+                <img class="img" src="{% static 'images/logo2.png' %}" alt="Logo Bright Consulting">
+            </a>
+
+            <div class="menu-toggle" id="menuToggle">☰</div>
+
+            <ul id="mainMenu">
+                <li><a href="{% url 'home' %}">Accueil</a></li> 
                 
-                <li><i class="fa-solid fa-clock"></i> 
-                <span class="horaire-semaine">Lundi-Vendredi: 8h30-17h30</span>
-                <span class="horaire-samedi">Samedi : 8h-13h30</span>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Nos programmes</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'visa_etudiant' %}">Visa Étudiant</a>
+                        <a href="{% url 'visa_travail' %}">Visa Travail</a>
+                        <a href="{% url 'visa_tourisme' %}">Visa Visiteur</a>
+                    </div>
                 </li>
                 
-                <li><i class="fa-solid fa-location-dot"></i>
-                <span class="horaire-semaine">Douala Bonamoussadi</span>
-                <span class="horaire-samedi">En face Santa Lucia</span>
-                </li>    
+                <li><a href="{% url 'service' %}">Services</a></li>
+                <li><a href="{% url 'cours' %}">Cours de langue</a></li>
+                <li><a href="#">Blog</a></li>
                 
-                <li><i class="fa-solid fa-phone"></i> +237 677 88 99 00</li>
-            </ul>
-        </div>
-        <div class="header2">
-            <ul>
-               <img class="img" src="{% static 'images/logo.jpeg' %}" alt="Description de mon logo">
-
-                <li>Acceuil</li>
-                
-                <li>Nos programmes</li>
-                
-                <li>Services</li>    
-                
-                <li>Blog</li>
-                <button type="button" class="button">Prendre RDV</button>
+                <li class="nav-button">
+                    <a href="{% url 'formulaire' %}" class="button">Prendre RDV</a>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <section>
+    <section class="section">
         {% block content %}
         {% endblock %}
     </section>
+
+    <div class="main-container">
+        
+        <header class="header-section">
+            <h1>Restez informé: nos actualités et conseils</h1>
+            <div class="content-wrapper">
+                <div class="left-panel">
+                    <p>Suivez toutes les actualités en fonction de votre engagement ici</p>
+                    <a href="{% url 'blog' %}" class="blog-button">Blog</a> 
+                </div>
+                <div class="article-cards">
+                    <div class="card">
+                        <img class="card-image-placeholder" src="{% static 'images/blog1.webp' %}" alt="Pourquoi étudier en belgique?">
+                        <h2>Pourquoi étudier en belgique?</h2>
+                        <p class="subtitle">les nouvelles réalités</p>
+                        <button class="view-more-button">Voir plus</button>
+                    </div>
+                    <div class="card">
+                        <img class="card-image-placeholder" src="{% static 'images/blog2.webp' %}" alt="les nouvelles règles au canada en 2025">
+                        <h2>les nouvelles règles au canada en 2025</h2>
+                        <p class="subtitle">les nouvelles réalités</p>
+                        <button class="view-more-button">Voir plus</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <footer class="site-footer">
+            <div class="footer-section footer-left">
+                <img src="{% static 'images/logo2.png' %}" alt="Bright Consulting Logo" class="logo">
+                <p>Située à Douala Bonamoussadi</p>
+                <p>en face de Santa Lucia</p>
+                <p>Ouvert de Mardi à vendredi de 8H30 à 17h30.</p>
+                <p>Le Lundi ouvert à 7H30</p>
+                <p>Samedi de 8H30 à 13H00</p>
+            </div>
+
+            <div class="footer-section footer-center">
+                <h3>Prêt à commencer votre aventure?<br> nous sommes disponibles</h3>
+                <p class="texte">N'hésitez pas à nous contacter pour prendre rendez-vous.</p>
+                <button class="rdv-button">Prendre RDV maintenant</button>
+                <p class="position_text">Retrouvez nous sur :</p>
+                <ul class="position">
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-tiktok"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-right">
+                <h3 class="contact1">Contactez nous au:</h3>
+                <p class="phone-number">+237 676 54 72 19</p> 
+                <p>ou</p>
+                <button class="whatsapp-button">WhatsApp</button>
+            </div>
+            
+            <div class="copyright-bar">
+                <p>© Copyright 2022. All Rights Reserved by Bright Consulting</p>
+            </div>
+        </footer>
+    </div>
+    
+    <a href="https://wa.me/237676547219" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-text">WhatsApp</span>
+    </a>
+    
+    <script src="{% static 'js/home.js' %}"></script>
+    
+    
+
 </body>
 </html>
