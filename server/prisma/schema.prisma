@@ -1,0 +1,147 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Pays {
+  id        Int     @id @default(autoincrement())
+  drapeau   String?
+  nom_pays  String  @unique
+  continent String
+
+  visas      VisaParPays[]
+  promotions Promotions[]
+
+  @@map("pays")
+}
+
+model TypeVisa {
+  id                 Int    @id @default(autoincrement())
+  nom_visa           String @unique
+  description_courte String
+
+  visasPays  VisaParPays[]
+  victoires  VictoireVoyageur[]
+  promotions Promotions[]
+
+  @@map("type_visa")
+}
+
+model ArticleDeBlog {
+  id              Int     @id @default(autoincrement())
+  image           String?
+  titre           String
+  description     String
+  avis_entreprise String
+
+  @@map("article_blog")
+}
+
+model VisaParPays {
+  id         Int @id @default(autoincrement())
+  paysId     Int
+  typeVisaId Int
+
+  pays      Pays     @relation(fields: [paysId], references: [id], onDelete: Cascade)
+  type_visa TypeVisa @relation(fields: [typeVisaId], references: [id], onDelete: Cascade)
+
+  offres OffreEmploi[]
+
+  @@unique([paysId, typeVisaId])
+  @@map("visa_par_pays")
+}
+
+model VictoireVoyageur {
+  id               Int    @id @default(autoincrement())
+  nom_voyageur     String
+  metier           String
+  pays_destination String
+  photo            String
+
+  typeVisaId Int?
+  type_visa  TypeVisa? @relation(fields: [typeVisaId], references: [id], onDelete: SetNull)
+
+  @@map("victoire_voyageur")
+}
+
+model Promotions {
+  id         Int    @id @default(autoincrement())
+  paysId     Int
+  typeVisaId Int
+  reduction  String
+
+  pays      Pays     @relation(fields: [paysId], references: [id], onDelete: Cascade)
+  type_visa TypeVisa @relation(fields: [typeVisaId], references: [id], onDelete: Cascade)
+
+  @@unique([paysId, typeVisaId])
+  @@map("promotions")
+}
+
+model OffreEmploi {
+  id                    Int     @id @default(autoincrement())
+  visaParPaysId         Int
+  poste_disponible      String
+  salaire_mensuel_min   Decimal @db.Decimal(12, 2)
+  salaire_mensuel_max   Decimal @db.Decimal(12, 2)
+  exigences_specifiques String
+
+  visa_pays VisaParPays @relation(fields: [visaParPaysId], references: [id], onDelete: Cascade)
+
+  @@map("offre_emploi")
+}
+
+model FiliereEtude {
+  id            Int    @id @default(autoincrement())
+  nom_filiere   String
+  domaine_etude String
+
+  @@map("filiere_etude")
+}
+
+model AvisVoyageur {
+  id              Int      @id @default(autoincrement())
+  nom_auteur      String
+  email           String?
+  contenu_avis    String
+  note            Int      @default(5)
+  date_soumission DateTime @default(now())
+  approuve        Boolean  @default(false)
+
+  @@index([date_soumission])
+  @@map("avis_voyageur")
+}
+
+model CoursLangue {
+  id                    Int    @id @default(autoincrement())
+  nom_cours             String
+  description_programme String
+
+  sections SectionHoraire[]
+
+  @@map("cours_langue")
+}
+
+model SectionHoraire {
+  id            Int       @id @default(autoincrement())
+  coursId       Int
+  nom_section   String
+  jours_semaine String
+  heure_debut   DateTime
+  duree_heures  Decimal   @db.Decimal(4, 2)
+  prix_total    Decimal   @db.Decimal(10, 2)
+  date_debut    DateTime?
+
+  cours CoursLangue @relation(fields: [coursId], references: [id], onDelete: Cascade)
+
+  @@map("section_horaire")
+}
